@@ -136,7 +136,7 @@ class Mqtt constructor(var uid: Long, private var listener: MqttListener): MqttC
         try {
             val connOpt = MqttConnectionOptions()
             connOpt.isAutomaticReconnect = true
-            connOpt.isCleanSession = cleanSession
+            connOpt.isCleanStart = cleanSession
             if (userName != null) {
                 connOpt.userName = userName;
                 if (password != null)
