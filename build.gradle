@@ -75,6 +75,6 @@ dependencies {
 object
 
 task wrapper(type: Wrapper) {
-  gradleVersion = "4.9"
+  gradleVersion = "4.10-rc-1"
   distributionType = Wrapper.DistributionType.ALL
 }
