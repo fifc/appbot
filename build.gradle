@@ -75,7 +75,9 @@ dependencies {
 }
 object
 
-task wrapper(type: Wrapper) {
-  gradleVersion = "4.10.1"
-  distributionType = Wrapper.DistributionType.ALL
-}
+//task wrapper(type: Wrapper) {
+//  gradleVersion = "4.10.2"
+//  distributionType = Wrapper.DistributionType.ALL
+//}
+
+// gradle wrapper --distribution-type=all --gradle-version=5.0-milestone-1
