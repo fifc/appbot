@@ -1,7 +1,7 @@
 package hello
 
 import com.google.protobuf.Message
-import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.delay
 import java.sql.Timestamp
 
 class Robot constructor(var uid: Long): MqttListener {

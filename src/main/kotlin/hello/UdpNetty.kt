@@ -11,8 +11,8 @@ import java.net.InetSocketAddress
 
 import io.netty.channel.Channel
 import kotlin.experimental.and
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import java.net.Inet6Address
 import com.google.protobuf.Message
 
