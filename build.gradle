@@ -81,4 +81,4 @@ object
 //  distributionType = Wrapper.DistributionType.ALL
 //}
 
-// gradle wrapper --distribution-type=all --gradle-version=5.0-milestone-1
+// ./gradlew wrapper --distribution-type=all --gradle-version=5.1-rc-1
