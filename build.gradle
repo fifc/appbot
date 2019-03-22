@@ -77,6 +77,6 @@ dependencies {
 object
 
 wrapper{
-    gradleVersion = '5.3-rc-3'
+    gradleVersion = '5.3'
     distributionType = Wrapper.DistributionType.ALL
 }
