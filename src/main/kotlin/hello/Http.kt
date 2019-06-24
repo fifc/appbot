@@ -9,6 +9,7 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.RequestBody
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 
 class Http {
     interface GwCallback {
@@ -38,12 +39,12 @@ class Http {
             override fun onResponse(call: Call, response: Response) {
                 //val http = call.request().tag() as Http
                 //println("tag: ${http.name}")
-                response.body()!!.use { responseBody ->
+                response.body!!.use { responseBody ->
                     if (!response.isSuccessful) throw IOException("Unexpected code " + response)
 
-                    val responseHeaders = response.headers()
+                    val responseHeaders = response.headers
                     var i = 0
-                    val size = responseHeaders.size()
+                    val size = responseHeaders.size
                     while (i < size) {
                         println(responseHeaders.name(i) + ": " + responseHeaders.value(i))
                         i++
@@ -56,7 +57,7 @@ class Http {
     }
 
     fun post(url: String, json: String) {
-        val JSON = MediaType.parse("application/json; charset=utf-8")
+        val JSON = "application/json; charset=utf-8".toMediaTypeOrNull()
         val body = RequestBody.create(JSON, json)
         val request = Request.Builder()
                 .url(url)
@@ -74,12 +75,12 @@ class Http {
             override fun onResponse(call: Call, response: Response) {
                 val http = call.request().tag() as Http
                 println("tag: ${http.name}")
-                response.body()!!.use { responseBody ->
+                response.body!!.use { responseBody ->
                     if (!response.isSuccessful) throw IOException("Unexpected code " + response)
 
-                    val responseHeaders = response.headers()
+                    val responseHeaders = response.headers
                     var i = 0
-                    val size = responseHeaders.size()
+                    val size = responseHeaders.size
                     while (i < size) {
                         println(responseHeaders.name(i) + ": " + responseHeaders.value(i))
                         i++
@@ -93,7 +94,7 @@ class Http {
     }
 
     fun gwCall(api: String, req: com.google.protobuf.Message, builder: com.google.protobuf.Message.Builder, callback: GwCallback?) {
-        val mtype = MediaType.parse("application/octet-stream")
+        val mtype = "application/octet-stream".toMediaTypeOrNull()
         val body = RequestBody.create(mtype, req.toByteArray())
         val request = Request.Builder()
                 .url(gwUrl + api)
@@ -109,7 +110,7 @@ class Http {
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
-                response.body()!!.use { responseBody ->
+                response.body!!.use { responseBody ->
                     if (!response.isSuccessful) throw IOException("Unexpected code " + response)
 
                     var reply = builder.mergeFrom(responseBody.byteStream()).build()
