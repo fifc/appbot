@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.3.0.BUILD-SNAPSHOT"
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
-	kotlin("jvm") version "1.3.50"
-	kotlin("plugin.spring") version "1.3.50"
+	kotlin("jvm") version "1.3.60"
+	kotlin("plugin.spring") version "1.3.60"
 }
 
 group = "com.y"
@@ -58,6 +58,6 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.wrapper{
-    gradleVersion = "6.0"
+    gradleVersion = "6.1-milestone-1"
     distributionType = Wrapper.DistributionType.ALL
 }
