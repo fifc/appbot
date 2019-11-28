@@ -58,6 +58,6 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.wrapper{
-    gradleVersion = "6.1-milestone-1"
+    gradleVersion = "6.1-milestone-2"
     distributionType = Wrapper.DistributionType.ALL
 }
