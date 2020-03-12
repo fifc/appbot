@@ -9,7 +9,7 @@ plugins {
 
 group = "com.y"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_13
 
 repositories {
 	mavenCentral()
@@ -53,11 +53,11 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "12"
+		jvmTarget = "13"
 	}
 }
 
 tasks.wrapper{
-    gradleVersion = "6.2.2"
+    gradleVersion = "6.3-rc-1"
     distributionType = Wrapper.DistributionType.ALL
 }
