@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val gradle_version = "6.3"
+
 plugins {
 	id("org.springframework.boot") version "2.3.0.BUILD-SNAPSHOT"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
@@ -58,6 +60,6 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.wrapper{
-    gradleVersion = "6.3-rc-4"
+    gradleVersion = gradle_version
     distributionType = Wrapper.DistributionType.ALL
 }
