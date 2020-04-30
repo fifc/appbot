@@ -5,8 +5,8 @@ val gradle_version = "6.4-rc-3"
 plugins {
 	id("org.springframework.boot") version "2.3.0.BUILD-SNAPSHOT"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
-	kotlin("jvm") version "1.3.70"
-	kotlin("plugin.spring") version "1.3.71"
+	kotlin("jvm") version "1.3.72"
+	kotlin("plugin.spring") version "1.3.72"
 }
 
 group = "com.y"
