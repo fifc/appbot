@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version = "6.4-rc-4"
+val gradle_version = "6.4"
 
 plugins {
 	id("org.springframework.boot") version "2.3.0.BUILD-SNAPSHOT"
