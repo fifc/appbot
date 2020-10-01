@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version = "6.6"
+val gradle_version = "6.7-rc-3"
 
 buildscript {
     extra.apply {
-        set("kotlinVersion", "1.4.0")
+        set("kotlinVersion", "1.4.10")
     }
 
     repositories {
@@ -19,14 +19,14 @@ buildscript {
 
 plugins {
 	id("org.springframework.boot") version "2.4.0-SNAPSHOT"
-	id("io.spring.dependency-management") version "1.0.9.RELEASE"
+	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 	kotlin("jvm") version "${property("kotlinVersion")}"
 	kotlin("plugin.spring") version "${property("kotlinVersion")}"
 }
 
 group = "com.y"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_14
+java.sourceCompatibility = JavaVersion.VERSION_15
 
 repositories {
 	mavenCentral()
@@ -70,7 +70,7 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "13"
+		jvmTarget = "14"
 	}
 }
 
