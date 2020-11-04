@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradle_version = "6.7-rc-3"
+val gradle_version = "6.7"
 
 buildscript {
     extra.apply {
-        set("kotlinVersion", "1.4.10")
+        set("kotlinVersion", "1.4.20-RC")
     }
 
     repositories {
@@ -38,13 +38,13 @@ repositories {
 }
 
 dependencies {
-	implementation("joda-time:joda-time")
+	//implementation("joda-time:joda-time")
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 	implementation("io.grpc:grpc-protobuf:+")
-	implementation("io.netty:netty-all:4.1.42.Final-SNAPSHOT")
+	implementation("io.netty:netty-all:4.1.53.Final-SNAPSHOT")
 	//implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:+")
 	//implementation("org.eclipse.paho:org.eclipse.paho.mqttv5.client:1.2.2-SNAPSHOT")
 	implementation("org.eclipse.paho:org.eclipse.paho.mqttv5.client:+")
@@ -70,7 +70,7 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "14"
+		jvmTarget = "15"
 	}
 }
 
